@@ -1,0 +1,219 @@
+/* Global Styles */
+html, body {
+    font-family: Optima;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: url('Untitled\ design_20250513_224708_0000.png') no-repeat center center;
+    background-size: contain;
+    background-attachment: fixed;
+    animation: bgWave 30s infinite alternate ease-in-out;
+}
+
+/* Navbar */
+.navbar {
+    font-size: 20px;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.5) !important; /* Faded Effect */
+    animation: fadeIn 1s ease-in-out;
+    backdrop-filter: blur(5px); /* Smooth Blur */
+    transition: background 0.5s ease-in-out;
+    padding-top: 30px;
+    position: relative;
+    z-index: 1050; 
+    font-weight: bold;
+}
+
+.navbar:hover {
+    background: rgba(26, 26, 26, 0.9); /* Darker on Hover */
+}
+
+.navbar-brand {
+    font-size: 26px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.navbar-nav .nav-link {
+    font-size: 20px;
+    margin-right: 15px;
+    transition: color 0.3s, transform 0.3s;
+    color: rgb(255, 252, 252); /* Faded Text */
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+/* Navbar Toggle Animation */
+.navbar-toggler {
+    border: none;
+    transition: transform 0.3s;
+}
+
+.navbar-toggler:hover {
+    transform: rotate(180deg);
+}
+
+/* Hero Section (Background Image with Fading Effect) */
+.hero-section {
+    position: relative;
+    text-align: center;
+    flex: 1;
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
+
+}
+
+/* Adding a Transparent Overlay */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+ /* Faded Overlay */
+    z-index: 1;
+}
+
+/* Text Animation */
+.hero-section h2, .hero-section p {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: 50px;
+}
+
+.hero-section h1 {
+    font-size: 40px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    opacity: 0;
+    animation: slideUp 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.hero-section img {
+    max-width: 100%;
+    height: auto;
+}
+.hero-section p {
+    font-size: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s, transform 0.3s;
+    margin: 0 10px;
+}
+
+.social-icon:hover {
+    color: #ffcc00;
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Smooth Background Animation (Like a Flag Moving in the Wind) */
+@keyframes bgWave {
+    0% {
+        background-size: 100%;
+        background-position: center;
+    }
+    50% {
+        background-size: 105%;
+        background-position: 48% 44%;
+    }
+    100% {
+        background-size: 100%;
+        background-position: center;
+    }
+}
+* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade Animation */
+.fade {
+    animation: fadeEffect 1s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
